@@ -2,17 +2,20 @@ body {
     background-color: #05053a;
     color: #fafaff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    display: grid;
-    place-content: center;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     overflow-y: auto;
 }
 h1,h2,h3,h4,h5,h6,p {
     margin-block: 0.5em;
 }
-main {
+/* main {
     max-width: 960px;
     margin-inline: auto;
-}
+} */
 input,button {
     padding-inline: 8px;;
     padding-block: 4px;
