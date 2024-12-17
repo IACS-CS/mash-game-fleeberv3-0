@@ -63,7 +63,7 @@ const App = () => {
     "Hyperpop",
     "Micropop",
     "Rock",
-    "Puck",
+    "Punk",
     "Country",
     "Metal",
     "Pop",
@@ -166,10 +166,24 @@ const App = () => {
       </h1>{" "}
       <input value={name} onChange={handleTextareaChange}></input>
       <input type="submit" onClick={submitForm}></input>
+      <h2>Let me predict your *FUTURE*</h2>
       <ul>
         <ul>
           {output.map((b, index) => (
-            <li key={index}>{b}</li>
+            <li key={index}>
+              {index == 0
+                ? "You will own a(n) "
+                : index == 1
+                ? "You will drive a(n) "
+                : index == 2
+                ? "You will enjoy eating "
+                : index == 3
+                ? "You will listen to this type of music: "
+                : index == 4
+                ? "Your favorite color will be "
+                : "Your occupation will be a(n) "}
+              {b}
+            </li>
           ))}
         </ul>
       </ul>
