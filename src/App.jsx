@@ -187,6 +187,17 @@ const App = () => {
           ))}
         </ul>
       </ul>
+      <br />
+      <br />
+      <p>
+        Find my code{" "}
+        <a
+          href="https://github.com/IACS-CS/mash-game-fleeberv3-0"
+          style={{ color: "#cfcfcf" }}
+        >
+          on GitHub
+        </a>
+      </p>
     </main>
   );
 };
