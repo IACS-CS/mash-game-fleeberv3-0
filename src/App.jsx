@@ -67,7 +67,7 @@ const App = () => {
     "Country",
     "Metal",
     "Pop",
-    "White Girl",
+    "White Girl Music",
     "K-Pop",
     "Indie",
     "Instrumental",
