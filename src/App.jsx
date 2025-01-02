@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./App.css";
 
 const App = () => {
@@ -126,6 +126,7 @@ const App = () => {
   /**
    * @param {string} str
    * @return {string[]}
+   * @author R. Mamet
    */
   const categoryOut = (str) => {
     str = str.toUpperCase();
@@ -158,6 +159,29 @@ const App = () => {
       setOutput(categoryOut(name));
     }
   };
+
+  const firstChildRef = useRef(null);
+
+  const handleClick = () => {
+    const firstChild = firstChildRef.current;
+    if (!firstChild) return;
+
+    firstChild.classList.add("animate");
+
+    const handleAnimationEnd = () => {
+      firstChild.classList.remove("animate");
+
+      firstChild.removeEventListener("animationed", handleAnimationEnd);
+    };
+
+    firstChild.addEventListener("animationed", handleAnimationEnd);
+  };
+
+  // return (
+  //     <div>
+  //         <div id="second-parent" onClick={handleClick}>Click Me</div>
+  //     </div>
+  // )
 
   return (
     <main>
