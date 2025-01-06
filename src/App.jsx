@@ -153,35 +153,28 @@ const App = () => {
     }
   };
 
-  const submitForm = () => {
+  const firstChildRef = useRef(null);
+  /**
+   * @author enostrain
+   * @returns void
+   */
+  const handleClick = () => {
     if (name !== "") {
       console.log(categoryOut(name));
       setOutput(categoryOut(name));
+      const firstChild = firstChildRef.current;
+      if (!firstChild) return;
+
+      firstChild.classList.add("animate");
+
+      const handleAnimationEnd = () => {
+        firstChild.classList.remove("animate");
+
+        firstChild.removeEventListener("animationed", handleAnimationEnd);
+      };
+      firstChild.addEventListener("animationed", handleAnimationEnd);
     }
   };
-
-  const firstChildRef = useRef(null);
-
-  const handleClick = () => {
-    const firstChild = firstChildRef.current;
-    if (!firstChild) return;
-
-    firstChild.classList.add("animate");
-
-    const handleAnimationEnd = () => {
-      firstChild.classList.remove("animate");
-
-      firstChild.removeEventListener("animationed", handleAnimationEnd);
-    };
-
-    firstChild.addEventListener("animationed", handleAnimationEnd);
-  };
-
-  // return (
-  //     <div>
-  //         <div id="second-parent" onClick={handleClick}>Click Me</div>
-  //     </div>
-  // )
 
   return (
     <main>
@@ -189,27 +182,25 @@ const App = () => {
         {greeting()} {name}
       </h1>{" "}
       <input value={name} onChange={handleTextareaChange}></input>
-      <input type="submit" onClick={submitForm}></input>
+      <input type="submit" onClick={handleClick}></input>
       <h2>Let me predict your *FUTURE*</h2>
-      <ul>
-        <ul>
-          {output.map((b, index) => (
-            <li key={index}>
-              {index == 0
-                ? "You will own a(n) "
-                : index == 1
-                ? "You will drive a(n) "
-                : index == 2
-                ? "You will enjoy eating "
-                : index == 3
-                ? "You will listen to this type of music: "
-                : index == 4
-                ? "Your favorite color will be "
-                : "Your occupation will be a(n) "}
-              {b}
-            </li>
-          ))}
-        </ul>
+      <ul id="first-child" ref={firstChildRef}>
+        {output.map((b, index) => (
+          <li key={index}>
+            {index == 0
+              ? "You will own a(n) "
+              : index == 1
+              ? "You will drive a(n) "
+              : index == 2
+              ? "You will enjoy eating "
+              : index == 3
+              ? "You will listen to this type of music: "
+              : index == 4
+              ? "Your favorite color will be "
+              : "Your occupation will be a(n) "}
+            {b}
+          </li>
+        ))}
       </ul>
       <br />
       <br />

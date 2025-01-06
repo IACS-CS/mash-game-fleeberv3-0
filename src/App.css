@@ -1,37 +1,145 @@
 body {
-    background-color: #05053a;
-    color: #fafaff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    overflow-y: auto;
+  background-color: #05053a;
+  color: #fafaff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
 }
-h1,h2,h3,h4,h5,h6,p {
-    margin-block: 0.5em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0.5em;
 }
 /* main {
     max-width: 960px;
     margin-inline: auto;
 } */
-input,button {
-    padding-inline: 8px;;
-    padding-block: 4px;
-    font-size: 18px;
+input,
+button {
+  padding-inline: 8px;
+  padding-block: 4px;
+  font-size: 18px;
 }
 button {
-    background: #c6093b;
-    color: white;
-    border: none;
-    border-radius: 8px;
+  background: #c6093b;
+  color: white;
+  border: none;
+  border-radius: 8px;
 }
-.row,.col {
-    gap: 8px;
-    align-items: center;
-    display: flex;
+.row,
+.col {
+  gap: 8px;
+  align-items: center;
+  display: flex;
 }
 .col {
-    flex-direction: column;    
+  flex-direction: column;
+}
+#first-child {
+  border-radius: 0%;
+}
+
+.animate {
+  -webkit-animation: myfirst 1s;
+  animation: myfirst 1s;
+}
+
+@keyframes myfirst {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.1;
+  }
+
+  20% {
+    opacity: 0.2;
+  }
+
+  30% {
+    opacity: 0.3;
+  }
+
+  40% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  60% {
+    opacity: 0.6;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+
+  80% {
+    opacity: 0.8;
+  }
+
+  90% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes myfirst {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.1;
+  }
+
+  20% {
+    opacity: 0.2;
+  }
+
+  30% {
+    opacity: 0.3;
+  }
+
+  40% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  60% {
+    opacity: 0.6;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+
+  80% {
+    opacity: 0.8;
+  }
+
+  90% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
