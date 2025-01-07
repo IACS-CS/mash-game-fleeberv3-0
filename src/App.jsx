@@ -156,7 +156,7 @@ const App = () => {
   const firstChildRef = useRef(null);
   /**
    * @author enostrain
-   * @returns void
+   * @returns {void}
    */
   const handleClick = () => {
     if (name !== "") {
